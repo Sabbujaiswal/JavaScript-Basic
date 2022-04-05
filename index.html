@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JAVA SCRIPT</title>
+
+    </head>
+    <body>
+        <!-- Time out & Time interval -->
+        <button id="tm">Clear-Me</button>
+    
+<script>
+    // let t1=setTimeout(fun1,3000);
+    // function fun1(){
+    //     prompt("this will come in 3 second")
+    // }
+
+    let t1=setInterval(fun2,3000)
+    function fun2(){
+        console.log("every 3 second m interval chlega ye")
+    }
+    let t2=document.getElementById('tm')
+    t2.addEventListener('click',function(){
+        clearInterval(t1)
+    })
+
+</script>
+
+
+
+
+<!-- BOM(Browser Object Model) -->
+
+<!-- opening other browser -->
+<button id="brs">Google</button>
+<button id="brs2">Yahoo</button>
+<button id="brs3">Close</button>
+<script>
+    let url='https://www.google.com/'
+    let features='width=500,height=500';
+    let btn1=document.getElementById('brs')
+    btn1.addEventListener('click',function(){
+        window.open(url,'google',features)
+    })
+    let btn2=document.getElementById('brs2')
+    btn2.addEventListener('click',function(){
+        window.open("https://www.yahoo.com/",'google')
+    })
+    let btn3=document.getElementById('brs3')
+    btn3.addEventListener('click',function(){
+        win.close();
+    })
+</script>
+
+
+
+
+        <!-- End of the DOM now uper will start BOM -->
+<!-- prevent default -->
+<form action="" id="nosubmitwrk">
+    <input type="text">
+    <input type="submit">
+</form>
+<script>
+    let nts=document.getElementById('nosubmitwrk')
+    nts.addEventListener('submit',function(e){
+e.preventDefault();
+console.log("submit will not work")
+    })
+</script>
+
+
+<!-- event on form -->
+<form action="">
+    <input type="text" id="frm">
+</form>
+<script>
+    function FocusEvent(){
+v.style.backgroundColor="yellow"
+    }
+    function BlureEvent(){
+v.style.backgroundColor="pink"
+    }
+    let v=document.getElementById('frm')
+    v.addEventListener('focus',FocusEvent)
+    v.addEventListener('blur',BlureEvent)
+    // v.addEventListener('change',function(){
+    //     console.log(this.value)
+    // })
+    v.addEventListener('input',function(){
+        console.log(this.value)
+    })
+</script>
+
+
+
+        <!-- page load event -->
+<img width="200px" id="img1" src="https://images.unsplash.com/photo-1517960413843-0aee8e2b3285?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZmVlbCUyMGdvb2R8ZW58MHx8MHx8&w=1000&q=80" alt="Alon fight">
+
+<script>
+window.addEventListener('DOMContentLoaded',function(){
+    console.log('Dom content loading')
+});
+let img=document.getElementById('img1')
+img.addEventListener('load',function(){
+    console.log('fully loaded')
+})
+
+</script>
+
+
+
+        <!-- event listener -->
+        <button id="btn" class="listener">Click-Me!</button>
+        <style>
+            .listener{
+                background-color: black;
+                color: aqua;
+            }
+        </style>
+       <script>
+           let sk =document.getElementById('btn')
+           sk.addEventListener('click', function(){
+               console.log("btn was clicked!!")
+           });
+           sk.addEventListener('mouseover',function(){
+               console.log('cursor reached on the button')
+           });
+           sk.addEventListener('mouseout',function(){
+               console.log('we leaved the mouse')
+           })
+       </script> 
+
+<!-- remove lisner -->
+<button id="rmv">Remove Method Used</button>
+<script>
+    function rmvMethod1(){
+        console.log("using first rmv method")
+    }
+    function rmvMethod2(){
+        console.log("using second remove method")
+    }
+    let rm=document.getElementById('rmv')
+    rm.addEventListener('click',rmvMethod1)
+    rm.addEventListener('click',rmvMethod2)
+    rm.removeEventListener('click',rmvMethod2)
+</script>
+
+
+<!-- using onclick method  -->
+<button onclick="btnclick()">Send</button>
+<style>
+    button{
+        background-color: red;
+        color: aqua;
+    }
+</style>
+<script>
+    function btnclick(){
+        alert("you send it!!!")
+    }
+ </script>
+
+<!-- <link rel="stylesheet" href="1st.css">
+<button class="dk">Mohan</button> -->
+
+        <ol id="menu">
+            <li>Home</li>
+            <li>Product</li>
+            <li>About Us</li>
+        </ol>
+        <h1 id="h">JS Tutorial</h1>
+        <ul>
+            <li id="list1">this is list1</li>
+            <li>This is list2</li>
+            <li>This is list3</li>
+        </ul>
+        <div id="jack">
+            <h2>
+                this is first heading
+            </h2>
+            <h2>
+                this is second heading
+            </h2>
+            <p class="para">this is first para</p>
+            <p class="para">this is second para</p>
+        </div>
+<script>
+
+    let div1=document.getElementById('jack')
+    let tg=div1.getElementsByTagName('h2')
+    for(let i =0;i<tg.length;i++){
+        tg[i].innerHTML="chnaged tag"
+    }
+
+
+
+   let elmt= document.getElementById('list1')
+//    console.log(elmt.innerHTML)
+   elmt.innerHTML='<p>Hello</p>'
+   console.log(elmt.innerHTML)
+
+
+</script>
+    </body>
+    <script src="1st.js">
+     
+    </script>
+</html>
